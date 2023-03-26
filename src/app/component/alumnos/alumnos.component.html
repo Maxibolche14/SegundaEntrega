@@ -1,0 +1,71 @@
+<div class="grid-alumnos">
+    <h1>ALUMNOS</h1>
+
+    <p>Hoy es {{fecha | date: 'dd/MM/yy hh:mm'}}</p>
+
+    <div class="container-fluid">
+        <h3 class="mb-3" style="color: rgb(43, 5, 195)">Lista de Alumnos</h3>
+        <table class="table table-stripped">
+            <thead>
+                <tr>
+                    <th>NOMBRE</th>
+                    <th>EDAD</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let persona of listaNombres">
+                    <td>
+                        {{persona.nombre}}
+                    </td>
+                    <td>
+                        {{persona.edad}}
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <br>
+    <div class="container-fluid">
+        <h3 style="color: rgb(11, 103, 32)">Alumnos mayores de edad</h3>
+        <table class="table table-stripped">
+            <thead>
+                <tr>
+                    <th>NOMBRE</th>
+                    <th>EDAD</th>
+                </tr>
+            </thead>
+            <tbody *ngFor="let persona of listaNombres">
+                <tr *ngIf="persona.edad > 18">
+                    <td>
+                        {{persona.nombre}}
+                    </td>
+                    <td>
+                        {{persona.edad}}
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <br>
+    <div class="container-fluid">
+        <h3 style="color: rgb(6, 143, 177)">Alumnos menores de edad</h3>
+        <table class="table table-stripped">
+            <thead>
+                <tr>
+                    <th>NOMBRE</th>
+                    <th>EDAD</th>
+                </tr>
+            </thead>
+            <tbody *ngFor="let persona of listaNombres">
+                <tr *ngIf="persona.edad < 18">
+                    <td>
+                        {{persona.nombre}}
+                    </td>
+                    <td>
+                        {{persona.edad}}
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
